@@ -9,10 +9,10 @@
       var cordY = 400;
       var radius = 100;
       var smileAngel = degToRad(90);
-      canvasContext.translate(cordX, cordY); // смещаем центр в центр фигуры пакмена
-      canvasContext.rotate(-smileAngel / 2); // поворачиваем систему координат на заданный угол
-      drawPackmenFigure(canvasContext, 0, 0, 100, "#cccc11", smileAngel); // рисуем пакмена
-      canvasContext.rotate(smileAngel / 2); // возвращаем всё на круги своя
+      canvasContext.translate(cordX, cordY); 
+      canvasContext.rotate(-smileAngel / 2); 
+      drawPackmenFigure(canvasContext, 0, 0, 100, "#cccc11", smileAngel); 
+      canvasContext.rotate(smileAngel / 2); 
       canvasContext.translate(-cordX, -cordY);
 
       function drawPackmenFigure(canvasContext, x, y, radius, color, endAngle)
@@ -27,12 +27,10 @@
           };
           canvasContext.fillStyle = color;
           canvasContext.beginPath();
-          // рисуем вырез рта
           canvasContext.moveTo(x, y);
           canvasContext.lineTo(startPoint.x, startPoint.y);
           canvasContext.moveTo(x, y);
           canvasContext.lineTo(endPoint.x, endPoint.y);
-          // рисуем тело
           canvasContext.arc(x, y, radius, endAngle, 0, false);
           canvasContext.fillStyle = color;
           canvasContext.strokeStyle = color;
