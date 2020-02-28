@@ -2,6 +2,15 @@
   <head>
   </head>
   <body>
-  <canvas id="canvas"></canvas>
+    <canvas id="canvas"></canvas>
+    <style>
+      var canvas = document.getElementById("canvas");
+      var canvasContext = canvas.getContext("2d");
+      var CANVAS_WIDTH = 1000;
+      var CANVAS_HEIGHT = 600;
+      // ./js/index.js
+      canvas.width = CANVAS_WIDTH;
+      canvas.height = CANVAS_HEIGHT;
+    </style>
   </body>
 </html>
