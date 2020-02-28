@@ -1,0 +1,21 @@
+
+body{
+    scroll-behavior: smooth;
+}
+.header{
+    height: 100px;
+}
+.element{
+    min-height: 400px !important;
+}
+.element > img{
+    max-height: 500px; width: 100%;
+    object-fit: cover;
+}
+.footer{
+    height: 150px;
+}
+.text-2{
+    font-family: 'Trade Winds' !important;
+    font-family: 'Open Sans' !important;
+}
