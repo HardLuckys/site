@@ -84,6 +84,7 @@
         $(document).ready(function(){
              $.ajax({
                         url: "http://hardlshardls.pythonanywhere.com/api/themes/",
+                        crossDomain: true,
                         success: function(response){
                             console.log(response);
                         }
