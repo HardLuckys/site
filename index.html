@@ -11,10 +11,10 @@
     <title>My site</title>
   </head>
   <body>
-    <div class="header col-12 bg-dark text-light pt-5" id="top">
-        <h3 class="text-center">My site</h3>
+    <div class="header col-12 bg-dark text-light pt-3 pb-3" id="head">
+        <h3 class="text-center">My site</h3>         
     </div>
-    <div class="col-12 text-center bg-dark border py-2 sticky-top">
+    <div class="col-12 text-center bg-dark border py-2 sticky-top" id="menu" style="height: auto;">
         <a href="#imager" class="text-light px-3">Картинка</a>
         <a href="#videoer" class="text-light px-3">Видео</a>
         <a href="#texter" class="text-light px-3">Текст</a>
@@ -22,6 +22,9 @@
         <a href="http://hardls21222.pythonanywhere.com/" class="text-light px-3">Еще сайт</a>
         <a href="canvas.html" class="text-light px-3">Еще сайт</a>
     </div>
+    
+    <div class="collapse bg-dark text-light py-5" id="top"></div>
+    
     <div class="content-all row col-md-8 bg-secondary mx-auto" style="min-height: 85vh;">
       
        <div class="element col-12 my-2 bg-dark text-light rounded" id='imager'>
@@ -69,9 +72,12 @@
                </li>
            </ul>
        </div>
+       <div class="col-12 my-2 bg-dark text-light rounded py-5" id='content'>
+           
+       </div>
     </div>
     <div class="footer col-12 bg-dark text-light text-center pt-3">
-        <a class="text-light d-block mb-4" href="#top">Наверх ↑</a>
+        <a class="text-light d-block mb-4" href="#head">Наверх ↑</a>
         <small>Все права защещины</small>
     </div>
     
@@ -79,19 +85,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    
-    <script>
-        $(document).ready(function(){
-             $.ajax({
-                        type: 'GET',
-                        crossDomain: true,
-                        dataType: 'json',
-                        url: "http://hardlshardls.pythonanywhere.com/api/themes/",
-                        success: function(response){
-                            console.log(response);
-                        }
-                    });
-        });
-    </script>
+    <script src="js.js"></script>
   </body>
 </html>

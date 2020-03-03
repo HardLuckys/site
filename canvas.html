@@ -5,38 +5,124 @@
   <body>
     <canvas id="canvas"></canvas>
     <script>
-      var cordX = 400;
-      var cordY = 400;
-      var radius = 100;
-      var smileAngel = degToRad(90);
-      canvasContext.translate(cordX, cordY); 
-      canvasContext.rotate(-smileAngel / 2); 
-      drawPackmenFigure(canvasContext, 0, 0, 100, "#cccc11", smileAngel); 
-      canvasContext.rotate(smileAngel / 2); 
-      canvasContext.translate(-cordX, -cordY);
+        var canvas = document.getElementById("canvas");
+        var canvasContext = canvas.getContext("2d");
+        var CANVAS_WIDTH = 1000;
+        var CANVAS_HEIGHT = 600;
+        canvas.width = CANVAS_WIDTH;
+        canvas.height = CANVAS_HEIGHT;
+        
+        /*
+        function drawPackmenFigure(canvasContext, x, y, radius, color, endAngle)
+        {
+            var startPoint = {
+                x: x + Math.cos(0) * radius,
+                y: y + Math.sin(0) * radius
+            };
+            var endPoint = {
+                x: x + Math.cos(endAngle) * radius,
+                y: y + Math.sin(endAngle) * radius
+            };
+            canvasContext.fillStyle = color;
+            canvasContext.beginPath();
+            // рисуем вырез рта
+            canvasContext.moveTo(x, y);
+            canvasContext.lineTo(startPoint.x, startPoint.y);
+            canvasContext.moveTo(x, y);
+            canvasContext.lineTo(endPoint.x, endPoint.y);
+            // рисуем тело
+            canvasContext.arc(x, y, radius, endAngle, 0, false);
+            canvasContext.fillStyle = color;
+            canvasContext.strokeStyle = color;
+            canvasContext.fill();
+            canvasContext.closePath();
+        };
+        
+        
+        function degrees_to_radians(degrees){
+          var pi = Math.PI;
+          return degrees * (pi/180);
+        };
+        
+        
+        var cordX = 400;
+        var cordY = 400;
+        var radius = 100;
+        var smileAngel = degrees_to_radians(90);
+        canvasContext.translate(cordX, cordY); // смещаем центр в центр фигуры пакмена
+        canvasContext.rotate(-smileAngel / 2); // поворачиваем систему координат на заданный угол
+        drawPackmenFigure(canvasContext, 0, 0, 100, "#cccc11", smileAngel); // рисуем пакмена
+        canvasContext.rotate(smileAngel / 2); // возвращаем всё на круги своя
+        canvasContext.translate(-cordX, -cordY);
+        */
+        
+        var GAME_FIELD_WIDTH = 400;
+        var GAME_FIELD_HEIGHT = 400;
+        var GAME_FIELD_ID = "gameField";
 
-      function drawPackmenFigure(canvasContext, x, y, radius, color, endAngle)
-      {
-          var startPoint = {
-              x: x + Math.cos(0) * radius,
-              y: y + Math.sin(0) * radius
-          };
-          var endPoint = {
-              x: x + Math.cos(endAngle) * radius,
-              y: y + Math.sin(endAngle) * radius
-          };
-          canvasContext.fillStyle = color;
-          canvasContext.beginPath();
-          canvasContext.moveTo(x, y);
-          canvasContext.lineTo(startPoint.x, startPoint.y);
-          canvasContext.moveTo(x, y);
-          canvasContext.lineTo(endPoint.x, endPoint.y);
-          canvasContext.arc(x, y, radius, endAngle, 0, false);
-          canvasContext.fillStyle = color;
-          canvasContext.strokeStyle = color;
-          canvasContext.fill();
-          canvasContext.closePath();
-      };
+        gameTick();
+        function gameTick(){
+            packman.move();
+            gameStateDrawer.drawState({ packman: packman });
+            window.requestAnimationFrame(gameTick);
+        };
+        function setHandlers(Packman){
+            document.onkeydown = function(event)
+            {
+                downButtonsHandler(event.keyCode, packman);
+            };
+            document.onkeyup = function(event)
+            {
+                upButtonsHandler(event.keyCode, packman);
+            };
+        };
+        
+        function Packman(x, y, constants)
+        {
+            this._x = x;
+            this._y = y;
+            this._directionX = NONE_DIRECT;
+            this._directionY = NONE_DIRECT;
+            this._speed = constants.speed;
+
+            this.move = function()
+            {
+                this._x += this._speed * this._directionX;
+                this._y += this._speed * this._directionY;
+            };
+
+            this.getX = function()
+            {
+                return this._x;
+            };
+
+            this.getY = function()
+            {
+                return this._y;
+            };
+
+            this.setDirectionX = function(direction)
+            {
+                this._directionX = direction;
+            };
+
+            this.setDirectionY = function(direction)
+            {
+                this._directionY = direction;
+            };
+
+            this.getDirectionX = function()
+            {
+                return this._directionX;
+            };
+
+            this.getDirectionY = function()
+            {
+                return this._directionY;
+            };
+        }
+      
+        
     </script>
   </body>
 </html>

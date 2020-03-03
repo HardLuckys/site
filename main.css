@@ -2,13 +2,11 @@
 body{
     scroll-behavior: smooth;
 }
-.header{
-    height: 100px;
-}
+
 .element{
     min-height: 400px !important;
 }
-.element > img{
+.element > img, #content-image{
     max-height: 500px; width: 100%;
     object-fit: cover;
 }
