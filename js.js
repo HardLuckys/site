@@ -1,6 +1,6 @@
 $(document).ready(function(){
             if (localStorage.getItem("Authorization")){
-                $('#menu').append('<a href="" class="text-danger float-right px-3" onclick="logout()">Выйти</a>');
+                $('#menu').append('<a href="" class="text-danger px-3" onclick="logout()">Выйти</a>');
                 show();
             } else{
                $('#menu').append('<a class="text-light px-3" data-toggle="collapse" href="#top" role="button" aria-expanded="false" aria-controls="top">Авторизация</a><a class="text-light px-3" href="https://hardlshardls.pythonanywhere.com/users/">Регистрация</a>');
