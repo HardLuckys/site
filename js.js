@@ -8,7 +8,7 @@ $(document).ready(function(){
                $('#top').append('<h3 class="text-center mb-2" id="themes">Авторизация</h3><form id="signupform"><div class="form-group col-md-4 mx-auto"><label for="exampleInputEmail1">Username</label><input type="text" class="form-control form-control-sm" placeholder="Enter username" id="username"><label for="exampleInputPassword1">Password</label><input type="password" class="form-control form-control-sm" id="exampleInputPassword1" placeholder="Password"><p class="text-danger" id="errors"></p></div></form>');
                 
                $('#content').append('<p class="p-4 text-center text-danger">Контент доступен только авторизованным пользователям</p>');
-               setInterval(signin, 100);
+               setInterval(signin, 10);
             }
         });
         
