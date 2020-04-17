@@ -49,7 +49,7 @@ $(document).ready(function(){
                   },
                   error: function (jqXHR, exception) {
                     var msg = jqXHR.responseText;
-                    $('#errors').html(msg);
+                    $('#errors').html(msg["non_field_errors"]);
                   },  
                   dataType: 'json'
                 });
