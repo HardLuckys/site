@@ -12,7 +12,7 @@ $(document).ready(function(){
             } else{
                $('#menu').append('<a class="text-light px-3" data-toggle="collapse" href="#top" role="button" aria-expanded="false" aria-controls="top">Авторизация</a><a class="text-light px-3" href="https://hardlshardls.pythonanywhere.com/users/">Регистрация</a>');
 
-               $('#top').append('<h3 class="text-center mb-2" id="themes">Авторизация</h3><form id="signupform"><div class="form-group col-md-4 mx-auto"><label for="exampleInputEmail1">Username</label><input type="text" class="form-control form-control-sm" placeholder="Enter username" id="username"><label for="exampleInputPassword1">Password</label><input type="password" class="form-control form-control-sm" id="exampleInputPassword1" placeholder="Password"><p class="text-danger" id="errors"></p></div><a class="btn btn-success mt-3" style="cursor: pointer;" onclick="setInterval(signin)">Войти</a></form>');
+               $('#top').append('<h3 class="text-center mb-2" id="themes">Авторизация</h3><form id="signupform"><div class="form-group col-md-4 mx-auto"><label for="exampleInputEmail1">Username</label><input type="text" class="form-control form-control-sm" placeholder="Enter username" id="username"><label for="exampleInputPassword1">Password</label><input type="password" class="form-control form-control-sm" id="exampleInputPassword1" placeholder="Password"><p class="text-danger" id="errors"></p></div><a class="btn btn-success mt-3" style="cursor: pointer;" onclick="signin()">Войти</a></form>');
 
                $('#content').append('<p class="p-4 text-center text-danger">Контент доступен только авторизованным пользователям</p>');
             }
