@@ -2,7 +2,9 @@
 body{
     scroll-behavior: smooth;
 }
-
+#letter{
+    cursor: pointer;
+}
 .element{
     min-height: 400px !important;
 }

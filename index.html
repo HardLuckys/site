@@ -6,41 +6,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="slider.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Trade+Winds&display=swap" rel="stylesheet">
     <title>My site</title>
   </head>
   <body>
     <div class="header col-12 bg-dark text-light pt-3 pb-3" id="head">
-        <h3 class="text-center">My site</h3>         
+        <h3 class="text-center">My site</h3>
     </div>
     <div class="col-12 text-center bg-dark border py-2 sticky-top" id="menu" style="height: auto;">
         <a href="#imager" class="text-light px-3">Картинка</a>
         <a href="#videoer" class="text-light px-3">Видео</a>
         <a href="#texter" class="text-light px-3">Текст</a>
+        <a class="text-light px-3" id="letter">Письмо</a>
         <a href="https://hardlshardls.pythonanywhere.com" class="text-light px-3">Сайт</a>
     </div>
-    
+
     <div class="collapse bg-dark text-light py-5" id="top"></div>
-    
+
     <div class="content-all row col-md-8 bg-secondary mx-auto" style="min-height: 85vh;">
-      
+
       <div class="col-12 my-2 bg-dark text-light rounded py-5" id='content'>
-           
+
        </div>
-      
-       <div class="element col-12 my-2 bg-dark text-light rounded" id='imager'>
+
+       <div class="element col-12 my-2 bg-dark text-light rounded py-5" id='imager'>
           <h4 class="text-center my-5">Картинка</h4>
            <img class="rounded-top border" src="https://pm1.narvii.com/6563/f6a27a753c40cae85ea4b45a2319db1002fa35e5_hq.jpg" alt="">
-           <p class="px-5 my-3">Описание картинки </p>
        </div>
-       
+
+       <div class="slider col-12 my-2 bg-dark text-light rounded py-5">
+           <div class="item" style="display: none;">
+                <img class="rounded border" src="https://cdn.pixabay.com/photo/2014/02/27/16/10/spring-276014__340.jpg" alt="Первая картинка">
+            </div>
+
+            <div class="item" style="display: none;">
+                <img class="rounded border" src="https://cdn.pixabay.com/photo/2014/04/14/20/11/japanese-cherry-trees-324175__340.jpg" alt="Вторая картинка">
+            </div>
+
+            <div class="item" style="display: none;">
+                <img class="rounded border" src="https://cdn.pixabay.com/photo/2016/02/27/06/43/cherry-tree-1225186__340.jpg" alt="Третья картинка">
+            </div>
+            <div class="item" style="display: block;">
+              <img class="rounded border" src="https://cdn.pixabay.com/photo/2014/01/22/19/44/flower-field-250016__340.jpg" alt="Четвертая картинка">
+          </div>
+
+          	<a class="prev" onclick="minusSlide()">❮</a>
+          	<a class="next" onclick="plusSlide()">❯</a>
+
+
+
+           <div class="slider-dots">
+            	<span class="slider-dots_item" onclick="currentSlide(1)"></span>
+              	<span class="slider-dots_item" onclick="currentSlide(2)"></span>
+                <span class="slider-dots_item" onclick="currentSlide(3)"></span>
+                <span class="slider-dots_item active" onclick="currentSlide(4)"></span>
+            </div>
+       </div>
+
        <div class="element col-12 my-2 bg-dark text-light rounded" id='videoer'>
            <h4 class="text-center my-5">Видево</h4>
            <iframe class="rounded border" src="https://vk.com/video_ext.php?oid=-188911068&id=456239074&hash=1c3ece975fb9e335" width="100%" height="500px" frameborder="0" allowfullscreen></iframe>
            <p class="px-5 my-3">Описание Видево </p>
        </div>
-       
+
        <div class="element col-12 my-2 bg-dark text-light rounded" id='texter'>
            <h4 class="text-2 text-center my-5">Текст</h4>
            <p>Some text here</p>
@@ -74,14 +104,13 @@
                </li>
            </ul>
        </div>
-       
+
     </div>
     <div class="footer col-12 bg-dark text-light text-center pt-3">
         <a class="text-light d-block mb-4" href="#head">Наверх ↑</a>
         <small>Все права защещины</small>
     </div>
-    
-    
+    <script src="slider.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
